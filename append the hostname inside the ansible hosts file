@@ -1,10 +1,10 @@
 # please append the hostname or host ip address inside the ansible hosts file:
-  Example: 
+  Example: <hostname> or <ipaddress>
    192.168.10.10
    192.168.10.11
  
  # if you want, you are align the host by group order. please follow the below method.
-   Example:
+   Example: <hostname> or <ipaddress>
    [web server]
    192.168.10.10
    [mail server]
@@ -12,12 +12,12 @@
  
  
  # if you want the hostname with remote host's user name and user's password
-   Example:
+   Example: <hostname> or <ipaddress>
    192.168.10.10 ansible_ssh_user=root ansible_ssh_pass=redhat
    192.168.10.11 ansible_ssh_user=student ansible_ssh_pass=student
  
                       or
-   Example:                   
+   Example: <hostname> or <ipaddress>                    
    [web server]
    192.168.10.10 ansible_ssh_user=root ansible_ssh_pass=redhat
    [mail server]
