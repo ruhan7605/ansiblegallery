@@ -1,4 +1,4 @@
-# please appent the hostname or host ip address inside the ansible hosts file:
+# please append the hostname or host ip address inside the ansible hosts file:
    192.168.10.10
    192.168.10.11
  
