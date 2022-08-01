@@ -4,7 +4,7 @@ method1# please append the hostname or host ip address inside the ansible hosts 
    192.168.10.10
    192.168.10.11
  
- method2# if you want, you are align the host by group order. please follow the below method.
+method2# if you want, you are align the host or hostname by group order. please follow the below method.
  
    example and note: you can append fqdn name or ip address
    [web server]
@@ -13,7 +13,7 @@ method1# please append the hostname or host ip address inside the ansible hosts 
    192.168.10.11
  
  
- method3# if you want the hostname with remote host's user name and user's password
+method3# if you want the hostname with remote host's user name and user's password
  
    example and note: you can append fqdn name or ip address
    192.168.10.10 ansible_ssh_user=root ansible_ssh_pass=redhat
