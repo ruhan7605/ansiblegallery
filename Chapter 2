@@ -11,9 +11,9 @@ Objectives
 DEPLOYING ANSIBLE
 =================
 
-===============
-Inventory File:
-===============
+======================
+Static Inventory File:
+======================
 • A static host inventory can be defined by a text file.
 
 
@@ -107,4 +107,4 @@ Pattern5:
         
         [canada]
         ontario[01:02].example.com
-                                                                        =====continuation====next_chapter2.1
+                                                                        =====PageContinuation====next_chapter2.1
