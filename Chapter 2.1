@@ -1,0 +1,51 @@
+===========================================
+Default Ansible Configuration file Location
+===========================================
+  # cat /etc/ansible/ansible.cfg
+    
+=======================================
+Default Ansible Inventory file Location
+=======================================
+  # cat /etc/ansible/hosts
+  
+  
+  NOTE: if you want, you can change your location from the default.
+
+ 
+ example:  
+  # copy /etc/ansible/ansible.cfg ~/ansible/ansible.cfg
+  # copy /etc/ansible/hosts ~/ansible/hosts
+  
+  Note:
+  # cat /etc/ansible/ansible.cfg
+  already here you noticed that the ansible.cfg file is incomplte. there is no more information inside the file. please carefully read the 
+  following instructions. type:
+  # ansible-config init --disabled > ansible.cfg
+  or
+  # ansible-config init --disabled -t all > ansible.cfg
+  
+=============================
+configuration file precedence
+=============================
+Step1:
+  Changes can be made and used in a configuration file which will be searched for in the following order:
+   • ANSIBLE_CONFIG (environment variable if set)
+   • ansible.cfg (in the current directory)
+   • ~/.ansible.cfg (in the home directory)
+   • /etc/ansible/ansible.cfg
+
+To check configuration file precedence 
+Method1:
+  Ansible will process the above list and use the first file found, all others are ignored.
+  ansible --version command to clearly identify which version of Ansible is installed, and which configuration file is being used.
+    # ansible --version
+    ansible [core 2.12.2]
+    config file = /root/ansible.cfg 
+    ..........output omitted...........
+ 
+ Method2:
+   Another way to display the active Ansible configuration file is to use the -v option when executing Ansible commands on the command line.
+   #ansible servers --list-hosts -v
+     Using /etc/ansible/ansible.cfg as config file
+     ...output omitted...
+
