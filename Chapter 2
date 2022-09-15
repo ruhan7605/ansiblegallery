@@ -1,1 +1,107 @@
-Ansible
+===========
+Objectives 
+===========
+•Describe Ansible inventory concepts and manage a static inventory file.
+• Describe where Ansible configuration files are located, how Ansible selects them, and edit them to apply changes to default settings.
+• Run a single Ansible automation task using an ad hoc command and explain some use cases for ad hoc commands.
+
+
+
+=================
+DEPLOYING ANSIBLE
+=================
+
+Inventory File: 
+• A static host inventory can be defined by a text file.
+
+
+    Pattern1:
+    list of host names or IP addresses of managed hosts, each on a single line:
+
+        web1.example.com
+        web2.example.com
+        db1.example.com
+        db2.example.com
+        192.0.2.42
+
+    Pattern2:
+    you organize managed hosts into host groups:
+
+        host group name enclosed in square brackets ([])
+        
+        [webservers]
+        web1.example.com
+        web2.example.com
+        192.0.2.42
+
+        [db-servers]
+        db1.example.com
+        db2.example.com
+
+    Pattern3:
+    Hosts can be in multiple groups:
+
+        [webservers]
+        web1.example.com
+        web2.example.com
+        192.0.2.42
+
+        [db-servers]
+        db1.example.com
+        db2.example.com
+        
+        [east-datacenter]
+        web1.example.com
+        db1.example.com
+        
+        [west-datacenter]
+        web2.example.com
+        db2.example.com
+        
+        [production]
+        web1.example.com
+        web2.example.com
+        db1.example.com
+        db2.example.com
+        
+        [development]
+        192.0.2.42
+
+    Pattern4:
+    Defining Nested Groups: 
+    • Ansible host inventories can include groups of host groups.
+    • Creating a host group name with the :children suffix
+
+        [usa]
+        washington1.example.com
+        washington2.example.com
+
+        [canada]
+        ontario01.example.com
+        ontario02.example.com
+        
+        [north-america:children]
+        canada
+        usa
+    
+    Pattern5:
+    Simplifying Host Specifications with Ranges:
+    You can specify ranges in the host names or IP addresses to simplify Ansible host inventories. You can specify either numeric or alphabetic ranges. 
+    
+    Ranges have the following syntax: [start:end]
+
+    • 192.168.[4:7].[0:255] matches all IPv4 addresses in the 192.168.4.0/22 network (192.168.4.0
+    through 192.168.7.255)
+    • server[01:20].example.com matches all hosts named server01.example.com through
+    server20.example.com.
+    • [a:c].dns.example.com matches hosts named a.dns.example.com, b.dns.example.com, and
+    c.dns.example.com.
+    • 2001:db8::[a:f] matches all IPv6 addresses from 2001:db8::a through 2001:db8::f.
+
+    the [usa] and [canada] group definitions from the earlier example:
+    
+        [usa]
+        washington[1:2].example.com
+        
+        [canada]
+        ontario[01:02].example.com
