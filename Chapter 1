@@ -1,19 +1,26 @@
 ======================================
 Ansible Introduction with Installation
 ======================================
+RHEL SYSTEM ROLES TERMINOLOGY
+    # Ansible Playbook
+    # Inventory
+    # Control Node
+    # Manage Nodes
 
-1. Install Red Hat Ansible
-    # yum install ansible
+Control Nodes:
+    1. Install Red Hat Ansible
+        # yum install ansible*
+        or
+        # yum install ansible-core
 
-2. Enable and install pythone36 or python27 
-    # yum install pythone36
+    2. Verify ansible is installed on the system (check from control node)
+        # ansible --version
 
-3. Verify ansible is installed on the system
-    # ansible --version
-
-4. Verify the "ansible_python_version" on the localhost by using "setup" moudel.
-    # ansible -m setup localhost 
-    or
-    # ansible -m setup localhost | grep ansible_python_version
+    3. Verify the "ansible_python_version" on the localhost by using "setup" moudel. (from control node)
+        # ansible -m setup localhost 
+        or
+        # ansible -m setup localhost | grep ansible_python_version
     
-
+Manage Hosts Side:
+    1. Enable and install pythone
+        # yum install python*
