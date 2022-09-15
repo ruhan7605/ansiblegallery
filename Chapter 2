@@ -11,11 +11,13 @@ Objectives
 DEPLOYING ANSIBLE
 =================
 
-Inventory File: 
+===============
+Inventory File:
+===============
 • A static host inventory can be defined by a text file.
 
 
-    Pattern1:
+Pattern1:
     list of host names or IP addresses of managed hosts, each on a single line:
 
         web1.example.com
@@ -24,7 +26,7 @@ Inventory File:
         db2.example.com
         192.0.2.42
 
-    Pattern2:
+Pattern2:
     you organize managed hosts into host groups:
 
         host group name enclosed in square brackets ([])
@@ -38,7 +40,7 @@ Inventory File:
         db1.example.com
         db2.example.com
 
-    Pattern3:
+Pattern3:
     Hosts can be in multiple groups:
 
         [webservers]
@@ -67,7 +69,7 @@ Inventory File:
         [development]
         192.0.2.42
 
-    Pattern4:
+Pattern4:
     Defining Nested Groups: 
     • Ansible host inventories can include groups of host groups.
     • Creating a host group name with the :children suffix
@@ -84,7 +86,7 @@ Inventory File:
         canada
         usa
     
-    Pattern5:
+Pattern5:
     Simplifying Host Specifications with Ranges:
     You can specify ranges in the host names or IP addresses to simplify Ansible host inventories. You can specify either numeric or alphabetic ranges. 
     
@@ -105,3 +107,4 @@ Inventory File:
         
         [canada]
         ontario[01:02].example.com
+                                                                        =====continuation====next_chapter2.1
