@@ -1,1 +1,22 @@
-Ansible
+======================================
+Ansible Introduction with Installation
+======================================
+
+1. To check pythone installed or not
+    # yum list installed platform-python
+
+2. Install Red Hat Ansible
+    # yum install ansible
+
+3. Enable and install pythone36 or python27 
+    # yum install pythone36
+
+4. Verify ansible is installed on the system
+    # ansible --version
+
+5. Verify the "ansible_python_version" on the localhost by using "setup" moudel.
+    # ansible -m setup localhost 
+    or
+    # ansible -m setup localhost | grep ansible_python_version
+    
+
