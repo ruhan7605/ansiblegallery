@@ -28,7 +28,7 @@ Default Ansible Inventory file Location
 configuration file precedence
 =============================
 Step1:
-  Changes can be made and used in a configuration file which will be searched for in the following order:
+  Configuration file which will be searched for in the following order:
    • ANSIBLE_CONFIG (environment variable if set)
    • ansible.cfg (in the current directory)
    • ~/.ansible.cfg (in the home directory)
@@ -48,4 +48,30 @@ Method1:
    #ansible servers --list-hosts -v
      Using /etc/ansible/ansible.cfg as config file
      ...output omitted...
+================================================================================================
+
+============================================
+Managing Settings in the configuration file:
+============================================
+The Ansible configuration file consists of several sections, with each section containing settings defined as key-value pairs. Section titles are enclosed in square brackets. For basic operation use the following two sections:
+
+  • [defaults] sets defaults for Ansible operation
+  • [privilege_escalation] configures how Ansible performs privilege escalation on managed
+    hosts
+
+CONFIGURING CONNECTIONS
+  • Inventory Location
+  • Connection Settings
+  • Escalating Previliges
+  • Non-SSH Connections
+  
+Ansible needs to know how to communicate with its managed hosts. One of the most common reasons to change the configuration file is to control which methods and users Ansible uses to administer managed hosts. Some of the information needed includes:
+  ***• The location of the inventory that lists the managed hosts and host groups
+  ***• Which connection protocol to use to communicate with the managed hosts (by default, SSH),   and whether or not a nonstandard network port is     needed to connect to the server
+  ***• Which remote user to use on the managed hosts; this could be root or it could be an unprivileged user
+  ***• If the remote user is unprivileged, Ansible needs to know if it should try to escalate privileges to root and how to do it (for example,        by using sudo)
+  ***• Whether or not to prompt for an SSH password or sudo password to log in or gain privileges
+  
+  
+  
 
