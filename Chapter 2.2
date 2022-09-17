@@ -1,0 +1,35 @@
+====================================
+RUNNING AD HOC COMMANDS WITH ANSIBLE
+====================================
+
+Use the ansible command to run ad hoc commands:
+  # ansible host-pattern -m module [-a 'module arguments'] [-i inventory]
+  
+Performing Tasks with Modules Using Ad Hoc Commands:
+  example:
+  # ansible all -m ping
+  
+  The ansible-doc -l command lists all modules installed on a system.
+  # ansible-doc ping
+  
+Ansibe Module:
+  
+  Module Catagory |  Modules
+  _____________________________________________________
+  Files Modules | copy, file, linein file, synchronise
+  _____________________________________________________
+  Software Package Modules | pacakage, yum, apt, dnf, gem, pip
+  ____________________________________________________________
+  System Modules | firewalld, reboot, service, user
+  _________________________________________________
+  Net tools Modules |  get_url, nmcli, uri
+  ________________________________________
+  
+example:
+ # ansible -m user -a 'name=newbie uid=4000 state=present' servera.lab.example.com
+
+Most modules are idempotent, which means that they can be run safely multiple times, and if the system is already in the correct state, they do nothing. 
+For example, if you run the previous ad hoc command again, it should report no change:
+  #  ansible -m user -a 'name=newbie uid=4000 state=present' servera.lab.example.com
+
+
